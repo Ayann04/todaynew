@@ -4,7 +4,6 @@ import time
 import logging
 from io import BytesIO
 from datetime import datetime
-
 from django.conf import settings
 from django.core.cache import cache
 from django.core.files.base import ContentFile
@@ -608,4 +607,5 @@ def download_excel(request):
     )
     response["Content-Disposition"] = 'attachment; filename="scraped_data.xlsx"'
     wb.save(response)
+
     return response
